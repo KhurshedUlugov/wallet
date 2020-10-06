@@ -8,9 +8,9 @@ type Currency string
 
 // Коды валют
 const (
-	TJS Currency = "TJS"
-	RUB Currency = "RUB"
-	USD Currency = "USD"
+        TJS Currency = "TJS"
+        RUB Currency = "RUB"
+        USD Currency = "USD"
 )
 
 // PAN номер карты
@@ -18,14 +18,14 @@ type PAN string
 
 // Card платежная карта
 type Card struct {
-	ID         int
-	PAN        PAN
-	Balance    Money
-	MinBalance Money
-	Currency   Currency
-	Color      string
-	Name       string
-	Active     bool
+        ID         int
+        PAN        PAN
+        Balance    Money
+        MinBalance Money
+        Currency   Currency
+        Color      string
+        Name       string
+        Active     bool
 }
 
 // PaymentCategory категория
@@ -36,18 +36,18 @@ type PaymentStatus string
 
 // статусы платежа
 const (
-	PaymentStatusOk         PaymentStatus = "OK"
-	PaymentStatusFail       PaymentStatus = "FAIL"
-	PaymentStatusInProgress PaymentStatus = "INPROGRESS"
+        PaymentStatusOk         PaymentStatus = "OK"
+        PaymentStatusFail       PaymentStatus = "FAIL"
+        PaymentStatusInProgress PaymentStatus = "INPROGRESS"
 )
 
 // Payment информация о платеже
 type Payment struct {
-	ID        string
-	AccountID int64
-	Amount    Money
-	Category  PaymentCategory
-	Status    PaymentStatus
+        ID        string
+        AccountID int64
+        Amount    Money
+        Category  PaymentCategory
+        Status    PaymentStatus
 }
 
 // Phone телефон
@@ -55,7 +55,15 @@ type Phone string
 
 // Account счет пользователья
 type Account struct {
-	ID      int64
-	Phone   Phone
-	Balance Money
+        ID      int64
+        Phone   Phone
+        Balance Money
+}
+
+type Favorite struct {
+        ID        string
+        AccountID int64
+        Name      string
+        Amount    Money
+        Category  PaymentCategory
 }
